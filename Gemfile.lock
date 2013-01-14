@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    em-proxy (0.1.8)
+      eventmachine
+    eventmachine (1.0.0-java)
+
+PLATFORMS
+  java
+
+DEPENDENCIES
+  em-proxy
