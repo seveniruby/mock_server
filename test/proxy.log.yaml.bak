@@ -2,15 +2,15 @@
 - req: ! "GET http://www.baidu.com HTTP/1.1\r\nUser-Agent: curl/7.21.1 (i686-pc-mingw32)\
     \ libcurl/7.21.1 OpenSSL/0.9.8r zlib/1.2.3\r\nHost: www.baidu.com\r\nAccept: */*\r\
     \nProxy-Connection: Keep-Alive\r\n\r\n"
-- baidu1: ! "HTTP/1.1 200 OK\r\nDate: Thu, 24 Jan 2013 11:37:54 GMT\r\nServer: Apache\r\
+- baidu2: ! "HTTP/1.1 200 OK\r\nDate: Fri, 25 Jan 2013 07:07:08 GMT\r\nServer: Apache\r\
     \nP3P: CP=\" OTI DSP COR IVA OUR IND COM \"\r\nP3P: CP=\" OTI DSP COR IVA OUR\
-    \ IND COM \"\r\nSet-Cookie: BAIDUID=03CF63B2616E112F6CF8FEE583B4A633:FG=1; expires=Fri,\
-    \ 24-Jan-14 11:37:54 GMT; max-age=31536000; path=/; domain=.baidu.com; version=1\r\
-    \nSet-Cookie: BAIDUID=03CF63B2616E112F73113A00E463FEE1:FG=1; expires=Fri, 24-Jan-14\
-    \ 11:37:54 GMT; max-age=31536000; path=/; domain=.baidu.com; version=1\r\nLast-Modified:\
-    \ Mon, 31 Dec 2012 10:42:36 GMT\r\nETag: \"1cdb-4d223abde3f00\"\r\nAccept-Ranges:\
-    \ bytes\r\nContent-Length: 7387\r\nCache-Control: max-age=1\r\nExpires: Thu, 24\
-    \ Jan 2013 11:37:55 GMT\r\nVary: Accept-Encoding,User-Agent\r\nConnection: Keep-Alive\r\
+    \ IND COM \"\r\nSet-Cookie: BAIDUID=5425F24AA2FE4EAD0D2DCCEBAA479354:FG=1; expires=Sat,\
+    \ 25-Jan-14 07:07:08 GMT; max-age=31536000; path=/; domain=.baidu.com; version=1\r\
+    \nSet-Cookie: BAIDUID=5425F24AA2FE4EADE4D57D76CCEB99B6:FG=1; expires=Sat, 25-Jan-14\
+    \ 07:07:08 GMT; max-age=31536000; path=/; domain=.baidu.com; version=1\r\nLast-Modified:\
+    \ Mon, 31 Dec 2012 10:42:38 GMT\r\nETag: \"1cdb-4d223abfcc380\"\r\nAccept-Ranges:\
+    \ bytes\r\nContent-Length: 7387\r\nCache-Control: max-age=1\r\nExpires: Fri, 25\
+    \ Jan 2013 07:07:09 GMT\r\nVary: Accept-Encoding,User-Agent\r\nConnection: Keep-Alive\r\
     \nContent-Type: text/html\r\n\r\n<!doctype html><html><head><meta http-equiv=\"\
     Content-Type\" content=\"text/html;charset=gb2312\"><title>百度一下，你就知道      </title><style>html{overflow-y:auto}body{font:12px\
     \ arial;text-align:center;background:#fff}body,p,form,ul{margin:0;padding:0}body,form,#fm{position:relative}td{text-align:left}img{border:0}a{color:#00c}a:active{color:#f60}#u{padding:7px\
@@ -21,15 +21,15 @@
     \ #cdcdcd #cdcdcd #9a9a9a;vertical-align:top}.btn{width:95px;height:32px;padding:0;padding-top:2px\\\
     9;border:0;background:#ddd url(http://www.baidu.com/img/i-1.0.0.png) no-repeat;cursor:pointer}.btn_h{background-position:-100px\
     \ 0}#kw,.bt"
-- baidu2: ! "HTTP/1.1 200 OK\r\nDate: Thu, 24 Jan 2013 11:37:54 GMT\r\nServer: Apache\r\
+- baidu1: ! "HTTP/1.1 200 OK\r\nDate: Fri, 25 Jan 2013 07:07:08 GMT\r\nServer: Apache\r\
     \nP3P: CP=\" OTI DSP COR IVA OUR IND COM \"\r\nP3P: CP=\" OTI DSP COR IVA OUR\
-    \ IND COM \"\r\nSet-Cookie: BAIDUID=0005F20637B5DD88577B01E944C6DDF0:FG=1; expires=Fri,\
-    \ 24-Jan-14 11:37:54 GMT; max-age=31536000; path=/; domain=.baidu.com; version=1\r\
-    \nSet-Cookie: BAIDUID=0005F20637B5DD88B022BE386CD1AEF7:FG=1; expires=Fri, 24-Jan-14\
-    \ 11:37:54 GMT; max-age=31536000; path=/; domain=.baidu.com; version=1\r\nLast-Modified:\
+    \ IND COM \"\r\nSet-Cookie: BAIDUID=DAA1CD56A67EF0DE2BF580787DC9F199:FG=1; expires=Sat,\
+    \ 25-Jan-14 07:07:08 GMT; max-age=31536000; path=/; domain=.baidu.com; version=1\r\
+    \nSet-Cookie: BAIDUID=DAA1CD56A67EF0DE111D50A8E9CB533D:FG=1; expires=Sat, 25-Jan-14\
+    \ 07:07:08 GMT; max-age=31536000; path=/; domain=.baidu.com; version=1\r\nLast-Modified:\
     \ Mon, 31 Dec 2012 10:42:37 GMT\r\nETag: \"1cdb-4d223abed8140\"\r\nAccept-Ranges:\
-    \ bytes\r\nContent-Length: 7387\r\nCache-Control: max-age=1\r\nExpires: Thu, 24\
-    \ Jan 2013 11:37:55 GMT\r\nVary: Accept-Encoding,User-Agent\r\nConnection: Keep-Alive\r\
+    \ bytes\r\nContent-Length: 7387\r\nCache-Control: max-age=1\r\nExpires: Fri, 25\
+    \ Jan 2013 07:07:09 GMT\r\nVary: Accept-Encoding,User-Agent\r\nConnection: Keep-Alive\r\
     \nContent-Type: text/html\r\n\r\n<!doctype html><html><head><meta http-equiv=\"\
     Content-Type\" content=\"text/html;charset=gb2312\"><title>百度一下，你就知道      </title><style>html{overflow-y:auto}body{font:12px\
     \ arial;text-align:center;background:#fff}body,p,form,ul{margin:0;padding:0}body,form,#fm{position:relative}td{text-align:left}img{border:0}a{color:#00c}a:active{color:#f60}#u{padding:7px\
@@ -112,7 +112,7 @@
     load\",function(){k.focus()});w.onunload=function(){};;</script>\r\n<script type=\"\
     text/javascript\" src=\"http://www.baidu.com/cache/hps/js/hps-1.1.js\"></script>\r\
     \n</html>"
-- baidu1: ! "n_wr{margin:0 5px 0 0}.btn_wr{width:97px;height:34px;display:inline-block;background:url(http://www.baidu.com/img/i-1.0.0.png)\
+- baidu2: ! "n_wr{margin:0 5px 0 0}.btn_wr{width:97px;height:34px;display:inline-block;background:url(http://www.baidu.com/img/i-1.0.0.png)\
     \ no-repeat -202px 0;_top:1px;*position:relative}#lk{margin:33px 0}#lk span{font:14px\
     \ \"宋体\"}#lm{height:60px}#lh{margin:16px 0 5px;word-spacing:3px}#mCon{height:18px;line-height:18px;position:absolute;right:7px;top:8px;top:10px\\\
     9;cursor:pointer;padding:0 18px 0 0;background:url(http://www.baidu.com/img/bg-1.0.0.gif)\

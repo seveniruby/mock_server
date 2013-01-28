@@ -42,7 +42,6 @@ class ProxyServer
 			@data=[] 
 		end
 		@data<<{backend=>data}.dup
-		p @data.count
 		@config['server']['log_format'].split.each do |format|
 			log_file=File.open(@config['server']['log']+"."+format,'w+')
 			case format
@@ -51,18 +50,29 @@ class ProxyServer
 			when 'json'
 				#to_json存在编码的问题，不明确指明编码可能会导致问题，php语言的json-encode只支持utf8，所以就默认设定为utf8了
 				log_file.puts @data.to_json
+			when 'base64json'
+				#折中下，想用json，又想支持binary，可以先base64
+
+				data64=[]
+				@data.each do |data|
+					data.each do |k,v|
+						data64<<{k=>Base64.strict_encode64(v)}.dup
+					end
+				end
+				log_file.puts data64.to_json
 			when 'yaml'
 				log_file.puts @data.to_yaml
 			when 'raw'
 				log_file.puts @data
 			end
+			log_file.flush
+			log_file.close
 		end
-		log_file.flush
-		log_file.close
+		puts backend+" data save"
 	end
 
 	def config
-		config={"server"=>{"ip"=>'0.0.0.0','port'=>'8077', 'log'=>'proxy.log', 'log_encoding'=>'UTF-8', 'log_format'=>'json yaml raw', 'encoding'=>'GBK'},'forward'=>{'baidu1'=>{"host"=>'www.baidu.com',"port"=>'80','encoding'=>'GBK'},'baidu2'=>{"host"=>'www.baidu.com',"port"=>'80','encoding'=>'GBK'}}}
+		config={"server"=>{"ip"=>'0.0.0.0','port'=>'8077', 'log'=>'proxy.log', 'log_encoding'=>'UTF-8', 'log_format'=>'yaml base64json json', 'encoding'=>'GBK'},'forward'=>{'baidu1'=>{"host"=>'www.baidu.com',"port"=>'80','encoding'=>'GBK'},'baidu2'=>{"host"=>'www.baidu.com',"port"=>'80','encoding'=>'GBK'}}}
 		File.open("proxy.conf",'w') do |f|
 			f.puts config.to_yaml
 		end
@@ -75,11 +85,13 @@ class ProxyServer
 		end
 		# modify / process request stream
 		conn.on_data do |data|
+			data.force_encoding @config['server']['encoding']
 			log 'req',data
 			data
 		end
 		# modify / process response stream
-		conn.on_response do |backend, resp|			
+		conn.on_response do |backend, resp|
+			resp.force_encoding @config['forward'][backend.to_s]['encoding']	
 			log backend, resp
 			#需要增加多转发时候的请求销毁
 			resp
@@ -106,7 +118,8 @@ class ProxyServer
 end
 
 
-if __FILE__==$0
+#兼容jruby和warble
+if __FILE__==$0 || $0=='<script>'
 	server=ProxyServer.new
 	case ARGV[0]
 	when 'config'
